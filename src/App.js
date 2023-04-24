@@ -1,25 +1,60 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
+
+
 
 function App() {
+const [one, setOne] = useState("");
+const [two, setTwo] = useState("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+<input onChange={(e)=>{
+setOne(e.target.value)
+}} type="number"/>
+<input type="number"onChange={(e)=>{
+setTwo(e.target.value)
+}} />
+<button onClick={()=>{
+
+if(one==0 || two==0){
+alert("заполните поля")
+}
+else{
+
+alert(+one + +two)}
+}}>плюс</button>
+<button onClick={()=>{
+
+if(one==0 || two==0){
+alert("заполните поля")
+}
+else{
+
+alert(+one - +two)}
+}}>минус</button>
+<button onClick={()=>{
+
+if(one==0 || two==0){
+alert("заполните поля")
+}
+else{
+
+alert(+one * +two)}
+}}>умножить</button>
+<button onClick={()=>{
+
+if(one==0 || two==0){
+alert("заполните поля")
+}
+else{
+
+alert(+one / +two)}
+}}>разделить</button>
+</div>
+)
+
 }
 
 export default App;
